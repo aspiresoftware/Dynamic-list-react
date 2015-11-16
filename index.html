@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Search through imdb movie list</title>
+	<!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+</head>
+<body>
+<style type="text/css">
+body {
+	padding: 0;
+	margin: 0;
+}
+	.example-enter {
+  opacity: 0.01;
+  
+}
+.hide {
+	display: none;
+}
+
+.example-enter.example-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.example-leave {
+  opacity: 1;
+}
+
+.example-leave.example-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+  animation: pulse 5s infinite;
+}
+@keyframes pulse {
+  0% {
+ 
+  }
+  100% {
+ transform:scale(-1);
+  }
+}
+</style>
+<div id="imdb-search">
+</div>
+<script src="build.js"></script>
+</body>
+</html>

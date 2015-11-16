@@ -1,0 +1,25 @@
+{
+  "name": "imdb-search",
+  "version": "1.0.0",
+  "description": "It allows you to search the movie by title from imdb",
+  "main": "index.js",
+  "scripts": {
+    "test": "watchify index.js -v -t babelify -o build.js"
+  },
+  "keywords": [
+    "reactjs",
+    "imdb-search",
+    "ng-repeat-like"
+  ],
+  "author": "Dhaval Shah",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "babelify": "^6.4.0",
+    "jquery": "^2.1.4",
+    "material-ui": "^0.13.1",
+    "react": "^0.14.1",
+    "react-addons-css-transition-group": "^0.14.0",
+    "react-dom": "^0.14.0",
+    "watchify": "^3.5.0"
+  }
+}
