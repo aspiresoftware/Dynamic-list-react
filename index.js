@@ -135,6 +135,7 @@ var SearchMovies = React.createClass({
 				</div>
 	},
 	getInitialState:function() {
+		window.timer = false;
 		return {
 			searchTerm:'',
 			/*
@@ -155,14 +156,20 @@ var SearchMovies = React.createClass({
 		if(searchTerm === '') return;
 		searchTerm = searchTerm.replace(/ /g,'+');
 		var searchUrl = that.state.searchUrl;
-		$.get(searchUrl+searchTerm,function(data) {
-			that.setState({
-				list:data
+		timer && clearTimeout(timer);
+		timer = setTimeout(function(){
+			$.get(searchUrl+searchTerm,function(data) {
+				that.setState({
+					list:data
+				})
 			})
-		})
+		}, 500);
+
 		return false;
 	},
 	handleChange:function(event) {
+		//To prevent page refresh when press the enter key
+		event.preventDefault();
 		var that = this;
 		this.setState({
 			searchTerm:event.target.value
@@ -175,8 +182,6 @@ var SearchMovies = React.createClass({
 		});
 	},
 	getMovieDetail:function(data) {
-		//To prevent page refresh when press the enter key
-		event.preventDefault();
 		var that = this;
 		var searchTerm = data;
 		var searchUrlById = that.state.searchUrlById;
