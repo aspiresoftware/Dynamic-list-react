@@ -45,7 +45,7 @@ var MovieList = React.createClass({
 		var key=0;
 		return <List>		
 		<ReactCSSTransitionGroup transitionName="example" transitionEnterTimeout={1000} transitionLeaveTimeout={1000} >	
-		{that.props.movielist.Response?<h3>Can not find movie name with searched text</h3>:that.props.movielist.Search.map(function(item,index,arr){
+		{that.props.movielist.Response === 'False' ?<h3>Can not find movie name with searched text</h3>:that.props.movielist.Search.map(function(item,index,arr){
 				//	calling the onclick method passed through properties, for more detail see https://facebook.github.io/react/docs/transferring-props.html
 				//	if got poster detail as NA then show local image. 
 				return 	<ListItem key={item.imdbID+key++} onClick={that.props.onclick.bind(null,item.imdbID)}
